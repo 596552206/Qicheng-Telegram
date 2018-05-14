@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+  ul
+  li
+    p "电报服务器状态"
+    p #{status}
+  li
+    p "启动/关闭服务器"
+    if status == "running"
+        button(onclick="shutdown()") "挂起"
+    else
+        button(onclick="startup()") "运行"
+  if status == "running"
+    li
+      p "链接数"
+      p #{connectionsNumber}
+    li
+      p "注册数"
+      p #{registeredNumber}
+
+
