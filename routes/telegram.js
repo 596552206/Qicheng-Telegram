@@ -1,11 +1,11 @@
 var express = require('express');
-var Telegram = require("/Users/mile/IdeaProjects/NodeLearningProject/public/javascripts/Telegram.js");
+var Telegram = require('../public/javascripts/telegram.js');
 var router = express.Router();
 var telegram = new Telegram();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    console.log("当前状态："+telegram.getStatus());
+    console.log("当前状态 ："+telegram.getStatus());
     if(telegram.getStatus() == "running"){
         res.render('telegram', { title: 'Telegram控制台',status:"running",connectionsNumber:2,registeredNumber:1});
     }else {
