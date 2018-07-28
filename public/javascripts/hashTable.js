@@ -88,4 +88,4 @@ function HashTable() {
         res = {};
     };
 }
-module.exports = new HashTable();
+module.exports =  HashTable;

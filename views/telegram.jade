@@ -7,15 +7,23 @@ block content
     p "电报服务器状态"
     p #{status}
   li
-    p "启动/关闭服务器"
+    p "总理服务器状态"
+    p #{p_status}
+  li
+    p "启动/关闭Telegram服务器"
     if status == "running"
         button(onclick="shutdown()") "挂起"
     else
         button(onclick="startup()") "运行"
+
+  li
+    p "启动/关闭Premier服务器"
+    if p_status == "p_running"
+        button(onclick="p_shutdown()") "挂起"
+    else
+        button(onclick="p_startup()") "运行"
+
   if status == "running"
-    li
-      p "链接数"
-      p #{connectionsNumber}
     li
       p "注册数"
       p #{registeredNumber}
